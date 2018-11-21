@@ -1,5 +1,6 @@
 class BookingController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index]
+  
   def index
     
   end
@@ -15,7 +16,7 @@ class BookingController < ApplicationController
         post.user_id = current_user.id
         post.save
         
-        redirect_to '/index'
+        redirect_to '/show'
   end
   
   def modify
@@ -29,13 +30,14 @@ class BookingController < ApplicationController
   def delete
     Post.destroy(params[:post_id])
         
-        redirect_to '/new'
+        redirect_to '/show'
   end
 
   def update
     post = Post.find(params[:post_id])
         post.classroom =  params[:classroom]
         post.time =  params[:time]
+        post.user_id = current_user.id
         post.save
         
         redirect_to '/new'
