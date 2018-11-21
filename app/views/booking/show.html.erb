@@ -1,0 +1,12 @@
+<h1>Booking#show</h1>
+My Booking Status<br>
+<hr>
+<% @posts.each do |post|%>
+Classroom : <%=post.classroom%><br>
+Time : <%=post.time%><br>
+<a href = '/modify/<%=post.id %>'>Modify</a> &nbsp <a href = '/delete/<%=post.id %>'>Cancel</a><hr>
+<%end%>
+
+<br>
+<a href='/new'>예약 신청</a><br>
+<p>Find me in app/views/booking/show.html.erb</p>
