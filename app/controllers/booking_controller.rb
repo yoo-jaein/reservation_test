@@ -5,12 +5,14 @@ class BookingController < ApplicationController
   end
   
   def show
+    @post = Post.find(current_user.id)
   end
 
   def create
     post = Post.new
         post.classroom = params[:classroom]
         post.time = params[:time]
+        post.user_id = current_user.id
         post.save
         
         redirect_to '/index'
