@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
   def configure_permitted_parameters
-     devise_parameter_sanitizer.permit(:sign_up, keys: [:student_dept, :student_id, :student_name])
-     devise_parameter_sanitizer.permit(:account_update, keys: [:student_dept, :student_id, :student_name])
+     devise_parameter_sanitizer.permit(:sign_up, keys: [:student_dept, :student_id, :name, :admin_id, :is_admin, :is_black])
+     devise_parameter_sanitizer.permit(:account_update, keys: [:student_dept, :student_id, :name, :admin_id, :is_admin, :is_black])
   end
   
 end

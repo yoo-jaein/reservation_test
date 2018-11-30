@@ -23,9 +23,12 @@ ActiveRecord::Schema.define(version: 20181121072947) do
   create_table "users", force: :cascade do |t|
     t.string   "student_dept",           default: "", null: false
     t.string   "student_id",             default: "", null: false
-    t.string   "student_name",           default: "", null: false
+    t.string   "name",                   default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.integer  "is_black"
+    t.integer  "is_admin"
+    t.string   "admin_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -7,10 +7,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # 학과, 학번, 이름, 이메일, 비밀번호
       t.string :student_dept,           null: false, default: ""
       t.string :student_id,           null: false, default: ""
-      t.string :student_name,           null: false, default: ""
+      t.string :name,           null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
+      t.integer :is_black
+      t.integer :is_admin
+      t.string :admin_id
+  
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
