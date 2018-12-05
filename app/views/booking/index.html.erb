@@ -1,0 +1,32 @@
+<%= render "navbar" %>
+  <header class="masthead text-center text-white">
+      <div class="masthead-content">
+        <div class="container">
+          <h1 class="masthead-heading mb-0">Booking It</h1>
+          <h2 class="masthead-subheading mb-0">try try try</h2>
+           <% if admin_signed_in? %>
+          <a href= '/admin_index' class="btn btn-primary btn-xl rounded-pill mt-5">Manage now!</a>
+          <% else %>
+          <a href= '/new' class="btn btn-primary btn-xl rounded-pill mt-5">Book now!</a><br>
+          <% end %>
+        </div>
+      </div>
+    </header>
+  
+  <Style>
+    
+    body {background-image : url(/public/KakaoTalk_20181129_120025491.jpg);}
+  </Style>
+
+
+<!-- Footer -->
+<footer class="py-5 bg-black">
+  <div class="container">
+    <p class="m-0 text-center text-white small">2018 Software Design Project</p>
+  </div>
+  </footer>
+  <!-- /.container -->
+  
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
