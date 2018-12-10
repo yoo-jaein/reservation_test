@@ -3,9 +3,12 @@
 			<div class="wrap-login100">
 
   
-<div class="jumbotron" style="margin-top: 50px; padding:50px; width:500px; margin-left: auto; margin-right: auto; background-color: white; border-radius: 1; box-shadow: 0 6px 12px rgba(0,0,0,.1);">
+<div class="jumbotron" style="margin-top: 25px; padding:50px; width:500px; margin-left: auto; margin-right: auto; background-color: white; border-radius: 1; box-shadow: 0 6px 12px rgba(0,0,0,.1);">
+        
     <div class="card-content">
+       <div align="center"><i class="fas fa-chalkboard-teacher" style="color:red"></i></div>
           <h2 class="text-center" style="font-weight: bold;">관리자 회원가입</h2>
+         
           <hr/>
           
           <div class="form-inputs">
@@ -15,37 +18,33 @@
             <div class="p-2 field"> 
               <i class="fa fa-paper-plane"></i>
               이메일<br />
-              <%= f.input :email,
+              <%= f.text_field :email,
                 required: true,
-                autofocus: true ,
-                input_html: { autocomplete: "email" }%>
+                autofocus: true %>
             </div>
       
             <div class="p-2 field">
-              <i class="fa fa-user"></i>이름 <br />
+              <i class="fa fa-user"></i> 이름 <br />
               <%= f.text_field :name %>
             </div>
             
              <div class="p-2 field">
-              <i class="fa fa-user"></i>관리자번호 <br />
+              <i class="fa fa-user"></i> 관리자번호 <br />
               <%= f.text_field :admin_id %>
             </div>
 
             <div class="p-2 field">
-              <i class="fa fa-lock"></i>
-              비밀번호
-              <%= f.input :password,
+              <i class="fa fa-lock"></i> 비밀번호<br />
+              <%= f.password_field :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
             </div>
           
             <div class="p-2 field">
               					<i class="fa fa-lock"></i>
               비밀번호 확인<br />
-              <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+              <%= f.password_field :password_confirmation,
+                required: true %>
             </div>
             
           <div class="form-actions">
