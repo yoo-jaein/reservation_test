@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin_index</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+    </style>
+
+
+
+  </head>
+
+  <body id="page-top">
+      
+      <div id="wrapper">
+      <%= render "navbar" %>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Heading Row -->
+      <div class="row my-4">
+        <div class="col-lg-8">
+          <img src="vue-bootstrap-calendar.png" alt="calendar">
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+        <h1>Reservation Status</h1>
+        <p>Total Request = <%=@posts%> </p>
+        <p>Accepted Request = <%=@accept_post%> </p>
+        <p>Rejected Request = <%=@reject_post%> </p>
+        <p>Wait Request = <%=@wait_post%> </p>
+        <p>Move to reservation manage page.</p>
+          <a class="btn btn-primary btn-lg" href="/admin_list.html">Accept | Deny </a>
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+      <!-- Content Row -->
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Report</h2>
+            </div>
+            <div class="card-footer">
+              <a href="/report_list" class="btn btn-primary">View report</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Department Events</h2>
+            </div>
+            <div class="card-footer">
+              <a href="/schedule_new.html" class="btn btn-primary">Upload</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Blacklist</h2>
+            </div>
+            <div class="card-footer">
+              <a href="black_index.html" class="btn btn-primary">Manage</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 -->
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">2018 Software Design</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
