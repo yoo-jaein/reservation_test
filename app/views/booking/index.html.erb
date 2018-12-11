@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Book - it!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/agency.min.css" rel="stylesheet">
+ 
+    <style>
+      @import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+      </style>
+     
+
+  <body id="page-top">
+      <%= render "navbar" %>
+
+    <!-- Navigation -
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">B-it</a>
+       
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto"> 
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Join</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+                     
+          <div class="intro-lead-in">
+              <span>Welcome To Our</span><span style=color:red> Service!</span></div>
+            <div class="intro-heading text-uppercase"><span style="font-family:Nanum Gothic Coding">강의실 대여 서비스</span></div>
+               <% if admin_signed_in? %>
+              <a href= '/admin_index' class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" style="background-color:#da2127">Manage now!</a>
+              <% else %>
+              <a href= '/new' class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" style="background-color:#da2127">Book now!</a><br>
+              <% end %>
+              </a>
+        </div>
+        
+      </div>
+    </header>
+
+      
+       <section id="services">
+          <div class="container">    
+              <div class="row no-gutters">
+        
+        
+          <div class="col-lg-6">
+              <div class="portfolio-item">
+                <span class="caption">
+                    <span class="caption-content">
+                  <h3><br><br>KNU SCSE Notice</h3>
+              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[0].link%>"><%=@notice[0].title%></a></p>
+              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[1].link%>"><%=@notice[1].title.split("안").first%></a></p>
+              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[2].link%>"><%=@notice[2].title%></a></p>
+              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[3].link%>"><%=@notice[3].title%></a></p>
+              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[4].link%>"><%=@notice[4].title%></a></p>
+                
+                    </span></span>
+          
+               <img class="img-fluid" src="small_bg1.png" alt="">
+          </div> 
+            </div>
+       
+         <div class="col-lg-6">
+            <a class="portfolio-item" href="#">
+              <img class="img-fluid" src="orange.png" alt="">
+            </a>
+          </div>
+                  
+                 
+        </div>
+           </div>
+      </section>
+
+      
+      
+    <section id="contact">
+      <div class="container">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">오시는 길</h2>
+            <h3 class="section-subheading text-muted">Kyungbook National University IT-5</h3>
+          
+      
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.325125151598!2d128.60913415090624!3d35.890052080048676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3565e19e1c03ddbd%3A0xdc40a75efbd7103c!2sKyungpook+National+University%2C+Daegu+Campus!5e0!3m2!1sen!2sus!4v1544012491121" width="900" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <br>
+                </div>
+          </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <span>Software Design Project 2018</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="javascripts/jqBootstrapValidation.min.js"></script>
+      
+    <!-- Custom scripts for this template -->
+    <script src="javascripts/agency.min.js"></script>
+  
+  </body>
+
+</html>
