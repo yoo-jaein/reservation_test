@@ -3,6 +3,7 @@
 
   <head>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -12,10 +13,22 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    
     <style>
+
         
 body {
   padding-top: 54px;
+}
+
+a:hover { 
+  color: #da2127;
 }
 
 @media (min-width: 992px) {
@@ -23,6 +36,9 @@ body {
     padding-top: 56px;
   }
 }
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
     </style>
 
 
@@ -40,61 +56,68 @@ body {
       <!-- Heading Row -->
       <div class="row my-4">
         <div class="col-lg-8">
-          <img src="vue-bootstrap-calendar.png" alt="calendar">
+          <h3>Monthly Schedule</h3><hr>
+          <%= month_calendar events: @date do |date, datetime| %>
+            <%= date.day %>
+          
+            <% datetime.each do |d| %>
+              <div>
+                <% if d.status == 1 %>
+                  <%= d.classroom %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+          
         </div>
         <!-- /.col-lg-8 -->
         <div class="col-lg-4">
-        <h1>Reservation Status</h1>
-        <p>Total Request = <%=@posts%> </p>
-        <p>Accepted Request = <%=@accept_post%> </p>
-        <p>Rejected Request = <%=@reject_post%> </p>
-        <p>Wait Request = <%=@wait_post%> </p>
-        <p>Move to reservation manage page.</p>
-          <a class="btn btn-primary btn-lg" href="/admin_list">Accept | Deny </a>
+        <h3>Reservation Status</h3>
+        <hr>
+          <% data = [['Accepted',     @accept_post],
+          ['Rejected',      @reject_post],
+          ['Waiting',  @wait_post]] %>
           
-   
-        </div>
-        <!-- /.col-md-4 -->
-      </div>
-      <!-- /.row -->
-      <!-- Content Row -->
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">Report</h2>
-            </div>
-            <div class="card-footer">
-              <a href="/report_list" class="btn btn-primary">View report</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">Department Events</h2>
-            </div>
-            <div class="card-footer">
-              <a href="/schedule_new" class="btn btn-primary">Upload</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h2 class="card-title">Blacklist</h2>
-            </div>
-            <div class="card-footer">
-              <a href="black_index" class="btn btn-primary">Manage</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.col-md-4 -->
 
+          <%= pie_chart data, library: { pieSliceText: 'value' }, donut: true %>
+        </div>
+        <!-- /.col-md-4 -->
       </div>
       <!-- /.row -->
+      <h3>Menu</h3><hr>
+            <div class = "row">
+              <div class="col-sm">
+                <ul class="d_width">
+                   <li style="width:250px; height:250px; border: 3px; background-color: #da2127; padding:15px; text-align:center">
+                      <a href="/admin_list" class="fas fa-list-ol fa-9x"  style = "margin-top: 30px; color: white">
+                         <p><span style="color: #ffffff; font-family:Nanum Gothic Coding; font-size: 120%;">Reservation Manage</span></p>
+                      </a>
+                   </li>
+               </div>
+            <div class="col-sm">
+               <li style="width:250px; height:250px; border: 3px; background-color: #da2127;　padding:15px; text-align:center">
+                  <a href="/report_list" class="fas fa-bullhorn fa-9x" style = "margin-top: 40px; color: white">
+                     <p><span style="color: #ffffff; font-family:Nanum Gothic Coding; font-size: 120%">View Report</span></p>
+                  </a>
+               </li>
+            </div>
+            <div class="col-sm">
+               <li style="width:250px; height:250px; border: 3px; background-color: #da2127;　padding:15px; text-align:center">
+                  <a href="/schedule_new" class="fas fa-calendar-check fa-9x" style = "margin-top: 40px; color: white">
+                     <p><span style="color: #ffffff; font-family:Nanum Gothic Coding; font-size: 120%">Department Events</span></p>
+                  </a>
+               </li>
+            </div>
+            <div class="col-sm">
+               <li style="width:250px; height:250px; border: 3px; background-color: #da2127;　padding:15px; text-align:center">
+                  <a href="black_index" class="fas fa-list-alt fa-9x" style = "margin-top: 40px; color: white">
+                     <p><span style="color: #ffffff; font-family:Nanum Gothic Coding; font-size: 120%">BlackList Manage</span></p>
+                  </a>
+               </li>
+            </div>
+            <div class="clear"></div>
+
+    </div>
     </div>
     <!-- /.container -->
 

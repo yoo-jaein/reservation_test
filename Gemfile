@@ -13,8 +13,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'groupdate'
 
-
+gem "simple_calendar", "~> 2.0"
+gem "chartkick"
 gem 'devise'
 gem 'rails_db', '2.0.4'
 # Use jquery as the JavaScript library

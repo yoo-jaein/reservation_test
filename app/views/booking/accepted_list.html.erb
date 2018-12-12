@@ -8,32 +8,21 @@
     <% cnt = 0 %>
     <% @posts.each do |post| %>
     <% cnt = cnt +1 %>
-    <%if post.status==1%>
-    <div class="notice notice-lg">
+    <div class="notice notice-success">
         <strong># <%= cnt %></strong><br>
-        Classroom : <%=post.classroom%><br>
-        Number of people : <%=post.people%><br>
+        Date : <%=post.date.to_s.split(" ").first%><br>
         Start Time : <%=post.starttime%><br>
         End Time : <%=post.endtime%><br>
-        Date : <%=post.date.to_s.split(" ").first%><br>
+        Classroom : <%=post.classroom%><br>
+        Number of people : <%=post.people%><br>
         Content : <%=post.content%><br>
         
         <div style="text-align:right;">
-          <%if post.status == 0%>
-          <span class="badge badge-secondary">Wait</span>
-          <%elsif post.status == 1%>
-          <span class="badge badge-success">Accepted</span>
-          <%elsif post.status == 2%>
-          <span class="badge badge-warning">Denied</span>
-          <%end%>
+            <span class="badge badge-success">Accepted</span>
             <div><%= post.created_at.to_s.split("+").first %>, <%= time_ago_in_words(post.created_at) %> ago</div>
-            
         </div>
     </div>
-    <%elsif post.status==0 || post.status==1%>
-    <%break%>
-    <%end%>
-    <%end%>
+    <% end %>
     
     <a href='/index'><button class="btn btn-primary">Back to main</button></a><br>
     <br>

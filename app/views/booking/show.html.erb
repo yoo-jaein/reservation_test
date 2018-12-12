@@ -7,14 +7,24 @@
 
     <% cnt = 0 %>
     <% @posts.each do |post| %>
+    
     <% cnt = cnt +1 %>
-    <div class="notice notice-lg">
+    <% if post.status == 0 %>
+    <div class="notice">
+        
+    <% elsif post.status == 1 %>
+    <div class="notice notice-success">
+        
+    <% elsif post.status == 2 %>
+    <div class="notice notice-warning">
+    <% end %>
+    
         <strong># <%= cnt %></strong><br>
-        Classroom : <%=post.classroom%><br>
-        Number of people : <%=post.people%><br>
+        Date : <%=post.date.to_s.split(" ").first%><br>
         Start Time : <%=post.starttime%><br>
         End Time : <%=post.endtime%><br>
-        Date : <%=post.date.to_s.split(" ").first%><br>
+        Classroom : <%=post.classroom%><br>
+        Number of people : <%=post.people%><br>
         Content : <%=post.content%><br>
         
         <div style="text-align:right;">
@@ -26,13 +36,17 @@
               <span class="badge badge-warning">Denied</span>
             <%end%>
             <div><%= post.created_at.to_s.split("+").first %>, <%= time_ago_in_words(post.created_at) %> ago</div>
-        
-            <a href="/modify/<%=post.id %>">
-                <span class="badge badge-dark">Modify</span>
-            </a>
-            <a href="/delete/<%=post.id %>">
-                <span class="badge badge-danger">Delete</span>
-            </a>
+            
+            <% if post.status == 0 %>
+                <a href="/modify/<%=post.id %>">
+                    <span class="badge badge-dark">Modify</span>
+                </a>
+            <% end %>
+            <% unless post.status == 1 %>
+                <a href="/delete/<%=post.id %>">
+                    <span class="badge badge-danger">Delete</span>
+                </a>
+            <% end %>
         </div>
     </div>
     <%end%>
@@ -62,6 +76,9 @@
 .notice-lg {
     padding: 35px;
     font-size: large;
+}
+.notice-dark {
+    
 }
 .notice-success {
     border-color: #80D651;

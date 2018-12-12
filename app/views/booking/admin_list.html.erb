@@ -4,18 +4,38 @@
     <br><br><br>
     <h1>Request List</h1>
     <hr>
-
+    
     <% cnt = 0 %>
     <% @posts.each do |post| %>
     <% cnt = cnt +1 %>
-    <div class="notice notice-info">
+
+    <% if post.status == 0 %>
+    <div class="notice">
+        
+    <% elsif post.status == 1 %>
+    <div class="notice notice-success">
+        
+    <% elsif post.status == 2 %>
+    <div class="notice notice-warning">
+    <% end %>
+
         <strong># <%= cnt %></strong><br>
-        Student : <%=post.user_id%><br> 
-        Classroom : <%=post.classroom%><br>
-        Number of people : <%=post.people%><br>
+        
+        <% unless post.user_id.nil? %>
+            Student : 
+                <% if post.user_id == @users[cnt-1].id %>
+                <%= @users[cnt-1].name %><br>
+                <% end %>
+            
+        <% else %>
+            Admin<br>
+        <% end %>
+        
+        Date : <%=post.date.to_s.split(" ").first%><br>
         Start Time : <%=post.starttime%><br>
         End Time : <%=post.endtime%><br>
-        Date : <%=post.date.to_s.split(" ").first%><br>
+        Classroom : <%=post.classroom%><br>
+        Number of people : <%=post.people%><br>
         Content : <%=post.content%><br>
         
         <div style="text-align:right;">

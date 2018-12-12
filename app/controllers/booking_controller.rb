@@ -3,11 +3,12 @@ class BookingController < ApplicationController
   
   def index
     @notice = Notice.all
-    
   end
 
-
   def create
+    if current_user.is_black == 2
+      redirect_to '/index'
+    else
     post = Post.new
         post.classroom = params[:classroom]
         post.starttime = params[:starttime]
@@ -20,6 +21,7 @@ class BookingController < ApplicationController
         post.save
         
         redirect_to '/show'
+    end
   end
   
   def modify
@@ -68,14 +70,32 @@ class BookingController < ApplicationController
     @accept_post = Post.where(:status => 1).size
     @reject_post = Post.where(:status => 2).size
     @wait_post = Post.where(:status => 0).size
+    
+    @date = Post.all
   end
   
   def admin_list
-     @posts = Post.all
+    @posts = Post.all
+    
+    @users = []
+    
+    Post.all.each do |pp|
+      unless pp.user_id.nil?
+      va = User.find(pp.user_id)
+      
+      unless va.nil?
+        @users.push(User.find_by_id(pp.user_id))
+      
+      end
+      else
+        @users.push(User.create(:id => 99999, :name => "admin"))
+      end
+    end
+
   end
   
   def accepted_list
-    @posts = Post.all
+    @posts = Post.where(:status => 1)
   end
 
   def schedule_accept
@@ -100,7 +120,7 @@ class BookingController < ApplicationController
         post.classroom = params[:classroom]
         post.starttime = params[:starttime]
         post.endtime = params[:endtime]
-        post.user_id = current_admin.id
+        
         post.date = params[:date]
         post.content = params[:content]
         post.people = params[:people]

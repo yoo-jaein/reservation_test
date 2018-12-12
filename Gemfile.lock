@@ -44,6 +44,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (10.0.2)
+    chartkick (3.0.1)
     codemirror-rails (5.16.0)
       railties (>= 3.0, < 6.0)
     coffee-rails (4.1.1)
@@ -67,6 +68,8 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    groupdate (4.1.1)
+      activesupport (>= 4.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
@@ -163,6 +166,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_calendar (2.3.0)
+      rails (>= 3.0)
     simple_form (4.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -205,14 +210,17 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  chartkick
   coffee-rails (~> 4.1.0)
   devise
+  groupdate
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 5.0.1)
   rails_db (= 2.0.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_calendar (~> 2.0)
   spring
   sqlite3
   turbolinks
