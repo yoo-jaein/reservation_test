@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# seed 파일을 생성하여 미리 데이터베이스를 생성한다.
+# 컴퓨터학부 공지사항 크롤링을 하여 모델 Notice를 생성한다.
+# 또한 유저와 관리자 계정을 각각 4개, 1개 생성한다.
 require 'nokogiri'
 require 'open-uri'
 

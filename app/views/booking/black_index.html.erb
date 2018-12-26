@@ -1,5 +1,6 @@
 <%= render "navbar" %>
 
+<!--관리자가 모든 User의 블랙 리스트 상태인 is_black을 관리하는 화면-->
 <div class="container">
     <br><br><br>
     <h1>Blacklist</h1>
@@ -20,6 +21,7 @@
           <span class="badge badge-secondary">1 out</span>
           <%elsif u.is_black == 2%>
           <span class="badge badge-warning">2 out</span>
+          <!--is_black이 2인 경우 예약 작성이 불가능-->
           <%end%>
             
             <a href="/black_create/<%=u.id%>">

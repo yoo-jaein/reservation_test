@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 class DeviseCreateAdmins < ActiveRecord::Migration[5.0]
+  # 관리자 모델 Admin
+  # gem Devise를 사용했다.
   def change
     create_table :admins do |t|
       ## Database authenticatable
+      # 이메일, 비밀번호, 이름, 관리자 번호
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :name,           null: false, default: ""

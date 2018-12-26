@@ -1,5 +1,6 @@
 <%= render "navbar" %>
 
+<!--모든 Post를 관리(승인, 거절)하는 화면-->
 <div class="container">
     <br><br><br>
     <h1>Request List</h1>
@@ -9,6 +10,7 @@
     <% @posts.each do |post| %>
     <% cnt = cnt +1 %>
 
+    <!--Post의 status에 따라 css 디자인을 다르게 적용-->
     <% if post.status == 0 %>
     <div class="notice">
         

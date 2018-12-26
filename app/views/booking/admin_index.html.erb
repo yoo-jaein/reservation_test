@@ -44,7 +44,8 @@ a:hover {
 
 
   </head>
-
+  
+  <!--관리자의 관리 메인 화면-->
   <body id="page-top">
       
       <div id="wrapper">
@@ -57,6 +58,8 @@ a:hover {
       <div class="row my-4">
         <div class="col-lg-8">
           <h3>Monthly Schedule</h3><hr>
+          <!--달력으로 보여주는 예약 현황-->
+          <!--accept된 Post의 date 정보를 달력에 표시-->
           <%= month_calendar events: @date do |date, datetime| %>
             <%= date.day %>
           
@@ -73,6 +76,7 @@ a:hover {
         <!-- /.col-lg-8 -->
         <div class="col-lg-4">
         <h3>Reservation Status</h3>
+        <!--상태별(accept, reject, wait) Post의 개수를 보여주는 실시간 도넛 차트-->
         <hr>
           <% data = [['Accepted',     @accept_post],
           ['Rejected',      @reject_post],
@@ -90,6 +94,7 @@ a:hover {
                 <ul class="d_width">
                    <li style="width:250px; height:250px; border: 3px; background-color: #da2127; padding:15px; text-align:center">
                       <a href="/admin_list" class="fas fa-list-ol fa-9x"  style = "margin-top: 30px; color: white">
+                        <!--예약 관리(승인, 거절)하기-->
                          <p><span style="color: #ffffff; font-family:Nanum Gothic Coding; font-size: 120%;">Reservation Manage</span></p>
                       </a>
                    </li>
@@ -97,6 +102,7 @@ a:hover {
             <div class="col-sm">
                <li style="width:250px; height:250px; border: 3px; background-color: #da2127;　padding:15px; text-align:center">
                   <a href="/report_list" class="fas fa-bullhorn fa-9x" style = "margin-top: 40px; color: white">
+                  <!--신고 및 건의사항 보기-->
                      <p><span style="color: #ffffff; font-family:Nanum Gothic Coding; font-size: 120%">View Report</span></p>
                   </a>
                </li>
@@ -104,6 +110,7 @@ a:hover {
             <div class="col-sm">
                <li style="width:250px; height:250px; border: 3px; background-color: #da2127;　padding:15px; text-align:center">
                   <a href="/schedule_new" class="fas fa-calendar-check fa-9x" style = "margin-top: 40px; color: white">
+                    <!--관리자가 직접 스케줄 입력하기-->
                      <p><span style="color: #ffffff; font-family:Nanum Gothic Coding; font-size: 120%">Department Events</span></p>
                   </a>
                </li>
@@ -111,6 +118,7 @@ a:hover {
             <div class="col-sm">
                <li style="width:250px; height:250px; border: 3px; background-color: #da2127;　padding:15px; text-align:center">
                   <a href="black_index" class="fas fa-list-alt fa-9x" style = "margin-top: 40px; color: white">
+                    <!--사용자 블랙 리스트 관리하기-->
                      <p><span style="color: #ffffff; font-family:Nanum Gothic Coding; font-size: 120%">BlackList Manage</span></p>
                   </a>
                </li>

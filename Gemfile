@@ -13,11 +13,15 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+# simple_calendar 젬을 사용하기 위해 설치했다.
 gem 'groupdate'
-
+# 관리자 페이지에서 그 달의 예약 현황을 캘린더로 보여주기 위해 사용했다.
 gem "simple_calendar", "~> 2.0"
+# 관리자 페이지에서 예약 상태를 도넛 차트로 보여주기 위해 사용했다.
 gem "chartkick"
+# 회원가입과 로그인 등 사용자 인증 시스템을 위해 사용했다.
 gem 'devise'
+# 데이터베이스 시각화를 위해 사용했다.
 gem 'rails_db', '2.0.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

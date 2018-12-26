@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Book - it!</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,35 +27,19 @@
      
 
   <body id="page-top">
-      <%= render "navbar" %>
+    <%= render "navbar" %>
+    <!--B-IT의 메인 화면-->
 
-    <!-- Navigation -
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">B-it</a>
-       
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto"> 
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Join</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Header -->
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
                      
           <div class="intro-lead-in">
               <span>Welcome To Our</span><span style=color:red> Service!</span></div>
-            <div class="intro-heading text-uppercase"><span style="font-family:Nanum Gothic Coding">강의실 대여 서비스</span></div>
-               <% if admin_signed_in? %>
+              <div class="intro-heading text-uppercase"><span style="font-family:Nanum Gothic Coding">강의실 대여 서비스</span></div>
+              
+              <!--User가 로그인 했을 때와 Admin이 로그인 했을 때 다른 버튼을 보여줌-->
+              <% if admin_signed_in? %>
               <a href= '/admin_index' class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" style="background-color:#da2127">Manage now!</a>
               <% else %>
               <a href= '/new' class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" style="background-color:#da2127">Book now!</a><br>
@@ -68,24 +51,24 @@
     </header>
 
       
-       <section id="services">
-          <div class="container">    
-              <div class="row no-gutters">
-        
+   <section id="services">
+      <div class="container">    
+          <div class="row no-gutters">
         
           <div class="col-lg-6">
               <div class="portfolio-item">
                 <span class="caption">
                     <span class="caption-content">
-                  <h3><br><br>KNU SCSE Notice</h3>
-              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[0].link%>"><%=@notice[0].title%></a></p>
-              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[1].link%>"><%=@notice[1].title.split("안").first%></a></p>
-              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[2].link%>"><%=@notice[2].title%></a></p>
-              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[3].link%>"><%=@notice[3].title%></a></p>
-              <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[4].link%>"><%=@notice[4].title%></a></p>
-                
-                    </span></span>
-          
+                    <h3><br><br>KNU SCSE Notice</h3>
+                    <!--컴퓨터학부 공지사항을 크롤링한 모델 Notice 보여줌-->
+                    <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[0].link%>"><%=@notice[0].title%></a></p>
+                    <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[1].link%>"><%=@notice[1].title%></a></p>
+                    <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[2].link%>"><%=@notice[2].title%></a></p>
+                    <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[3].link%>"><%=@notice[3].title%></a></p>
+                    <p><a style="color:white" href="http://computer.knu.ac.kr/07_sub/01_sub.html<%=@notice[4].link%>"><%=@notice[4].title%></a></p>
+                  
+                    </span>
+                </span>
                <img class="img-fluid" src="small_bg1.png" alt="">
           </div> 
             </div>

@@ -1,4 +1,5 @@
 <%= render "navbar" %>
+<!--User가 자신이 작성한 Post를 모두 볼 수 있는 화면-->
 
 <div class="container">
     <br><br><br>
@@ -9,6 +10,7 @@
     <% @posts.each do |post| %>
     
     <% cnt = cnt +1 %>
+    <!--Post의 status에 따라 css 디자인을 다르게 적용-->
     <% if post.status == 0 %>
     <div class="notice">
         
