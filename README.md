@@ -1,5 +1,5 @@
 
-# B-IT : Booking Classroom for KNU students
+# B-IT : Classroom Bookings for KNU students
 경북대학교 학생을 위한 강의실 대여 서비스:
 - 2018-2 소프트웨어설계 5조 프로젝트
 - 현재 IT융복합공학관 시범 서비스 중
